@@ -2,6 +2,9 @@
 
 Interactive grid-based visualizer for classic pathfinding algorithms. Click to build mazes, drag start/finish nodes, and watch algorithms explore the grid in real time.
 
+## Web Link
+https://tanveersinghd.github.io/Pathfinding-Visualizer/
+
 ## Features
 - Algorithms: A* (Manhattan), Greedy best-first, Dijkstra, BFS, DFS, Bidirectional BFS, Bidirectional Dijkstra, Beam search
 - Interactive grid: add/remove walls, drag start/end, resize rows/cols, random wall generator
