@@ -1,6 +1,7 @@
 # Pathfinding Visualizer
 
 Interactive grid-based visualizer for classic pathfinding algorithms. Click to build mazes, drag start/finish nodes, and watch algorithms explore the grid in real time.
+
 Best optimised for desktop view
 
 ## Web Link
