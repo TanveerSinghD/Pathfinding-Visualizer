@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pathfinding Visualizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Interactive algorithms</p>
+        <h1>Pathfinding Visualizer</h1>
+        <p class="lede">Design your maze, pick an algorithm, and watch the route unfold.</p>
+        <div id="status" class="status-pill">Ready to build a maze.</div>
+      </div>
+      <div class="legend">
+        <div class="legend-item start"><span></span>Start</div>
+        <div class="legend-item end"><span></span>Finish</div>
+        <div class="legend-item wall"><span></span>Wall</div>
+        <div class="legend-item visit"><span></span>Visited</div>
+        <div class="legend-item path"><span></span>Shortest path</div>
+      </div>
+    </header>
+
+    <section class="panel controls">
+      <div class="control-group">
+        <label for="algorithm">Algorithm</label>
+        <select id="algorithm">
+          <option value="astar">A* (Manhattan)</option>
+          <option value="greedy">Greedy best-first</option>
+          <option value="dijkstra">Dijkstra</option>
+          <option value="bfs">Breadth-first search</option>
+          <option value="dfs">Depth-first search</option>
+          <option value="bidirectional">Bidirectional BFS</option>
+          <option value="bidijkstra">Bidirectional Dijkstra</option>
+          <option value="beam">Beam search</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="speed">Speed <span id="speedLabel">Medium</span></label>
+        <input id="speed" type="range" min="1" max="5" step="1" value="3">
+      </div>
+      <div class="control-group size">
+        <div>
+          <label for="rows">Rows</label>
+          <input id="rows" type="number" min="6" max="40" value="20">
+        </div>
+        <div>
+          <label for="cols">Columns</label>
+          <input id="cols" type="number" min="8" max="60" value="35">
+        </div>
+        <button id="resize" class="ghost">Resize grid</button>
+      </div>
+      <div class="buttons">
+        <button id="visualize" class="primary">Visualize</button>
+        <button id="clearPath">Clear path</button>
+        <button id="clearWalls">Clear walls</button>
+        <button id="randomize">Random walls</button>
+      </div>
+    </section>
+
+    <section class="panel grid-shell">
+      <div id="grid" class="grid" aria-label="pathfinding grid"></div>
+    </section>
+
+    <section class="panel helper">
+      <div>
+        <h3>How it works</h3>
+        <p>Click to add or remove walls. Drag the start or finish markers to reposition them. Press <strong>Visualize</strong> to animate the search.</p>
+      </div>
+      <div class="tips">
+        <p><strong>A*</strong> uses a heuristic to explore efficiently. <strong>Dijkstra</strong> is optimal but exhaustive. <strong>BFS</strong> finds the shortest path on unweighted grids. <strong>DFS</strong> dives deep and is not guaranteed to find the best path.</p>
+        <p>Change the grid size to explore dense or wide-open layouts. Random walls quickly generate fresh mazes.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
